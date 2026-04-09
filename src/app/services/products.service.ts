@@ -77,6 +77,7 @@ addedProducts:any=[];
     this.cp.push(j);
   }
   cart1(){
+    console.log(this.cp)
     return of(this.cp)
   }
 }

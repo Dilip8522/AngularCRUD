@@ -10,12 +10,12 @@ export class UserDasboardComponent {
   constructor(private dp:Router){}
     username:any;
     logouts(){
-      localStorage.removeItem("loginId");
+      localStorage.removeItem("loginuser");
       this.dp.navigateByUrl("/")
     }
     ngOnInit(){
-      if(localStorage.getItem("loginId")){
-        this.username=localStorage.getItem("loginId");
+      if(localStorage.getItem("loginuser")){
+        this.username=localStorage.getItem("loginuser");
       }else{
         this.dp.navigateByUrl("/");
       }

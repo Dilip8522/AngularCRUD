@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-userproducts',
@@ -18,6 +19,7 @@ export class UserproductsComponent {
     addedProduct:any=[];
    addtocart(obj:any){
     this.addedProduct.push(obj);
-    this.data.cart(this.addedProduct)
+    this.data.cart(obj)
+    Swal.fire("Added to cart");
    }
 }

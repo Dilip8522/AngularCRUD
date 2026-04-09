@@ -12,14 +12,18 @@ export class LoginComponent {
   username:any;
   password:any;
   reqpass:any;
+  adminPass:any;
   loginS(){
+    this.adminPass="admin123"
     this.reqpass =this.username.slice(0,3)+"123";
-    if(this.reqpass==this.password){
-      alert("login success");
+    if(this.password==this.adminPass){
+      Swal.fire("Logined to admin");
       localStorage.setItem("loginId",this.username);
       this.dp.navigateByUrl("/menu/addproducts");
-    }else{
-      Swal.fire("Login Success")
+    }else if(this.reqpass==this.password){
+      Swal.fire("Login Success");
+      localStorage.setItem("loginuser",this.username);
+      this.dp.navigateByUrl("/user/products");
     }
   }
 }

@@ -30,7 +30,6 @@ export class ManageProductsComponent {
     }
     updateNow(obj:any){
       this.dummy=obj;
-      console.log(this.dummy)
     }
     updateProductNow(){
       this.result=this.data.updateProduct(this.dummy);
