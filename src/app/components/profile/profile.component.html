@@ -1,0 +1,29 @@
+<h1>Welcome {{username}}</h1>
+<br>
+<div class="container" *ngIf="products.length!=0; else notAdded">
+    <div class="row">
+        <h4>Items Added by you</h4>
+        <div class="col-md-4" *ngFor="let p of products">
+            <div class="card">
+
+                <div class="card-header">
+                    <img [src]="p.image" alt="" class="card-img-top" height="200">
+                </div>
+                <div class="card-body">
+                    <h5>{{p.name}}</h5>
+                    <p>{{p.description}}</p>
+                    <p class="badge bg-success">Category : {{p.category}}</p>
+                    <br>
+                    <label for="" class="badge bg-warning">{{p.price | currency:'INR'}}</label>
+                </div>
+                <!-- <div class="card-footer">
+                    <button class="btn btn-primary">Buy Now</button>
+                </div> -->
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<ng-template #notAdded>
+    <h3>No Items Added By You</h3>
+</ng-template>

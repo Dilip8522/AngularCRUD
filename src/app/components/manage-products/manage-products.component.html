@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <h1>Products</h1>
+        <div class="col-md-4" *ngFor="let p of products">
+            <div class="card">
+
+                <div class="card-header">
+                    <img [src]="p.image" alt="" class="card-img-top" height="200">
+                </div>
+                <div class="card-body">
+                    <h5>{{p.name}}</h5>
+                    <p>{{p.description}}</p>
+                    <p class="badge bg-success">Category : {{p.category}}</p>
+                    <br>
+                    <label for="" class="badge bg-warning">{{p.price | currency:'INR'}}</label>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <button class="btn btn-primary" (click)="updateNow(p)" data-bs-toggle="modal" data-bs-target="#update">Update</button>
+                    <button class="btn btn-danger" (click)="deleteNow(p.id)">Delete</button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="update">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update Product Details</h2>
+                <button class="btn-close"  data-bs-dismiss="modal">.</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group">
+                    <label for="" class="formlabel">Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="dummy.name" placeholder="Enter Product Name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="" class="formlabel">Price</label>
+                    <input type="text" class="form-control" [(ngModel)]="dummy.price" placeholder="Enter Product Price" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="" class="formlabel">Category</label>
+                    <input type="text" class="form-control" [(ngModel)]="dummy.category" placeholder="Enter Product Category" name="category">
+                </div>
+                <div class="form-group">
+                    <label for="" class="formlabel">Description</label>
+                    <input type="text" class="form-control" [(ngModel)]="dummy.description" placeholder="Enter Product Description" name="description">
+                </div>
+                <div class="form-group">
+                    <label for="" class="formlabel">Image</label>
+                    <input type="text" class="form-control" [(ngModel)]="dummy.image" placeholder="Enter Product Image" name="image">
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button class="btn btn-primary" 
+                (click)="updateProductNow()" 
+                data-bs-dismiss="modal">
+                    Update
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

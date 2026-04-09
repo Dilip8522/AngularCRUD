@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form (ngSubmit)="loginS()">
+                <div class="form-group mb-3">
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="Enter Username" [(ngModel)]="username" name="username" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success me-2" type="submit">Login</button>
+                    <button class="btn btn-primary" type="reset">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

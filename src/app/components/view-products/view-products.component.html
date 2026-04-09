@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <h1>Products</h1>
+        <div class="col-md-4" *ngFor="let p of products">
+            <div class="card">
+
+                <div class="card-header">
+                    <img [src]="p.image" alt="" class="card-img-top" height="200">
+                </div>
+                <div class="card-body">
+                    <h5>{{p.name}}</h5>
+                    <p>{{p.description}}</p>
+                    <p class="badge bg-success">Category : {{p.category}}</p>
+                    <br>
+                    <label for="" class="badge bg-warning">{{p.price | currency:'INR'}}</label>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </div>
+</div>
